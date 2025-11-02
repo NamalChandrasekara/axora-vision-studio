@@ -1,0 +1,83 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-primary">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-up">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white text-sm font-medium">
+            <CheckCircle2 className="w-4 h-4 text-accent" />
+            <span>Australian Standards Certified</span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            Transform Your Vision Into
+            <span className="block text-gradient-accent mt-2">
+              Build-Ready Reality
+            </span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+            Expert drafting, 3D modeling, rendering, and structural analysis services for architects, builders, and developers across Australia.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent-glow text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-glow hover:shadow-glow transition-all duration-300 hover:scale-105"
+              onClick={() => scrollToSection('contact')}
+            >
+              Get Started
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-lg px-8 py-6 text-lg rounded-xl transition-all duration-300"
+              onClick={() => scrollToSection('services')}
+            >
+              Our Services
+            </Button>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="pt-8 flex flex-wrap justify-center gap-8 text-white/60 text-sm">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-accent" />
+              <span>50% Cost Savings</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-accent" />
+              <span>Fast Turnaround</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-accent" />
+              <span>Expert Team</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+    </section>
+  );
+};
+
+export default Hero;
