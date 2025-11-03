@@ -1,125 +1,75 @@
-import { useEffect, useRef } from "react";
+const teamMembers = [
+  {
+    name: "Dr. Alex Chen",
+    role: "Chief Technology Officer",
+    description: "PhD in Mechanical Engineering with 15+ years of experience in product development and manufacturing systems.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Sarah Martinez",
+    role: "IoT Solutions Lead",
+    description: "Expert in embedded systems and IoT architecture, specializing in Industry 4.0 implementations.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Michael Thompson",
+    role: "Senior Mechanical Engineer",
+    description: "Specializes in rapid prototyping and CAD design with extensive experience in manufacturing processes.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Lisa Wong",
+    role: "ERP Integration Specialist",
+    description: "Leads our ERP implementation team with expertise in streamlining manufacturing operations and workflows.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
+  }
+];
 
 const About = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const sectionTop = sectionRef.current.offsetTop;
-      const scrollPosition = window.scrollY;
-      const offset = scrollPosition - sectionTop + window.innerHeight / 2;
-
-      imageRefs.current.forEach((img, index) => {
-        if (img) {
-          const speed = 0.05 + (index * 0.02);
-          const yPos = offset * speed;
-          img.style.transform = `translateY(${yPos}px)`;
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section id="about" ref={sectionRef} className="section-padding bg-gradient-subtle overflow-hidden">
+    <section id="about" className="section-padding bg-gradient-subtle overflow-hidden">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left: Images with parallax */}
-          <div className="relative h-[600px] order-2 lg:order-1">
-            {/* Image 1 */}
+        <div className="text-center mb-16 space-y-4">
+          <span className="text-sm font-semibold tracking-widest uppercase text-accent">
+            Our Team
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            Meet The Experts Behind
+            <span className="bg-gradient-tech bg-clip-text text-transparent block mt-2">
+              Fonova Labs
+            </span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Our multidisciplinary team brings together decades of experience in mechanical engineering, IoT, and advanced manufacturing.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
             <div
-              ref={(el) => imageRefs.current[0] = el}
-              className="absolute top-0 left-0 w-72 h-48 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
+              key={index}
+              className="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-large transition-all duration-300 hover-lift border border-border group"
             >
-              <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop"
-                alt="Modern architectural exterior"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Image 2 */}
-            <div
-              ref={(el) => imageRefs.current[1] = el}
-              className="absolute top-24 right-0 w-80 h-56 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop"
-                alt="Interior design visualization"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Image 3 */}
-            <div
-              ref={(el) => imageRefs.current[2] = el}
-              className="absolute bottom-24 left-12 w-64 h-44 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
-                alt="Architectural blueprint"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Image 4 */}
-            <div
-              ref={(el) => imageRefs.current[3] = el}
-              className="absolute bottom-0 right-8 w-72 h-48 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&h=400&fit=crop"
-                alt="3D rendering visualization"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Right: Content */}
-          <div className="space-y-6 order-1 lg:order-2">
-            <div className="inline-block">
-              <span className="text-sm font-semibold tracking-widest uppercase text-accent">
-                About Us
-              </span>
-            </div>
-
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Engineering Innovation,
-              <span className="bg-gradient-tech bg-clip-text text-transparent block mt-2">
-                From Concept to Reality
-              </span>
-            </h2>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              At Fonova Labs, we transform innovative ideas into working prototypes and production-ready systems. With expertise in mechanical engineering, IoT solutions, ERP systems, and advanced manufacturing, we help businesses bring cutting-edge products to market faster and more efficiently.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">200+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">ISO</div>
-                <div className="text-sm text-muted-foreground">Certified</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">Smart</div>
-                <div className="text-sm text-muted-foreground">IoT Solutions</div>
+              <div className="p-6 space-y-3">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-semibold text-accent uppercase tracking-wide">
+                  {member.role}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {member.description}
+                </p>
               </div>
             </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
