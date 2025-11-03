@@ -21,7 +21,7 @@ All colors MUST be HSL.
     --primary: 220 40% 15%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 220 35% 25%;
-    
+
     /* Warm Orange - Energy & Innovation */
     --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
@@ -30,7 +30,7 @@ All colors MUST be HSL.
     /* Neutral Grays */
     --secondary: 220 15% 95%;
     --secondary-foreground: 220 20% 10%;
-    
+
     --muted: 220 15% 95%;
     --muted-foreground: 220 15% 40%;
 
@@ -47,7 +47,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(220 40% 15%), hsl(220 35% 25%));
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 60%));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
-    
+
     --shadow-soft: 0 2px 8px hsl(220 20% 10% / 0.08);
     --shadow-medium: 0 4px 16px hsl(220 20% 10% / 0.12);
     --shadow-large: 0 8px 32px hsl(220 20% 10% / 0.16);
@@ -126,7 +126,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-['Instrument_Sans',sans-serif];
+    @apply bg-background text-foreground;
+    font-family: 'Instrument Sans', sans-serif;
   }
 
   html {

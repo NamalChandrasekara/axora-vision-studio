@@ -38,7 +38,7 @@ const About = () => {
               className="absolute top-0 left-0 w-72 h-48 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
             >
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop"
+                src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
                 alt="Modern architectural exterior"
                 className="w-full h-full object-cover"
               />
@@ -50,7 +50,7 @@ const About = () => {
               className="absolute top-24 right-0 w-80 h-56 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
             >
               <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop"
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                 alt="Interior design visualization"
                 className="w-full h-full object-cover"
               />
@@ -62,7 +62,7 @@ const About = () => {
               className="absolute bottom-24 left-12 w-64 h-44 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
             >
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
+                src="https://images.unsplash.com/photo-1742729096780-600245031d80?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                 alt="Architectural blueprint"
                 className="w-full h-full object-cover"
               />
@@ -74,7 +74,7 @@ const About = () => {
               className="absolute bottom-0 right-8 w-72 h-48 rounded-2xl overflow-hidden shadow-large border border-border transition-transform duration-100"
             >
               <img
-                src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&h=400&fit=crop"
+                src="https://plus.unsplash.com/premium_photo-1663091886562-d01346b6a998?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171"
                 alt="3D rendering visualization"
                 className="w-full h-full object-cover"
               />

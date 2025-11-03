@@ -82,12 +82,12 @@ const Footer = () => {
                 className="flex items-center gap-2 text-white/60 hover:text-accent transition-colors duration-300 text-sm"
               >
                 <Phone className="w-4 h-4" />
-                +61 3 8500 1234
+                +94 70 3977453
               </a>
             </div>
             <div className="flex gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/fonova-labs/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 hover:bg-accent border border-white/10 hover:border-accent flex items-center justify-center transition-all duration-300"

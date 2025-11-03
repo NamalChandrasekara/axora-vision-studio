@@ -16,7 +16,7 @@ const advantages: Advantage[] = [
   },
   {
     icon: Shield,
-    title: "ISO Certified",
+    title: "Expert Engineering Service",
     description: "Quality management systems certified to international standards for reliable delivery.",
     color: "from-blue-400 to-indigo-600"
   },

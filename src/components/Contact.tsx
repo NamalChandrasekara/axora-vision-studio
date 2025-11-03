@@ -91,7 +91,7 @@ const Contact = () => {
                   <div>
                     <div className="text-white/60 text-sm mb-1">Phone</div>
                     <a href="tel:+61385001234" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
-                      +61 3 8500 1234
+                      +94 70 3977453
                     </a>
                   </div>
                 </div>
@@ -103,8 +103,8 @@ const Contact = () => {
                   <div>
                     <div className="text-white/60 text-sm mb-1">Location</div>
                     <div className="text-white text-lg font-medium">
-                      Innovation Hub, Melbourne<br />
-                      Victoria, Australia
+                      Fonova Labs, Kuruwita<br />
+                      Sri Lanka
                     </div>
                   </div>
                 </div>

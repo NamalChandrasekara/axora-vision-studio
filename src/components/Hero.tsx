@@ -20,7 +20,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white text-sm font-medium">
             <CheckCircle2 className="w-4 h-4 text-accent" />
-            <span>ISO Certified Engineering Solutions</span>
+            <span>Expert Engineering Solutions</span>
           </div>
 
           {/* Main heading */}
@@ -49,7 +49,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-lg px-8 py-6 text-lg rounded-xl transition-all duration-300"
+              className="border-2 border-black/30 text-black hover:bg-white/10 backdrop-blur-lg px-8 py-6 text-lg rounded-xl transition-all duration-300"
               onClick={() => scrollToSection('services')}
             >
               Our Services
