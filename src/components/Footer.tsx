@@ -16,10 +16,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">
-              Axora <span className="text-accent">Engineering</span>
+              Fonova <span className="text-accent">Labs</span>
             </h3>
             <p className="text-white/60 text-sm leading-relaxed">
-              Transforming ideas into precise, visual, and build-ready solutions for architects, builders, and developers across Australia.
+              Engineering innovation through mechanical design, rapid prototyping, IoT solutions, and ERP systems for next-generation manufacturing.
             </p>
           </div>
 
@@ -58,11 +58,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-white font-semibold">Services</h4>
             <ul className="space-y-2 text-sm text-white/60">
-              <li>CAD Drafting</li>
-              <li>3D Modeling</li>
-              <li>Rendering & Walkthroughs</li>
-              <li>BOQ & Estimating</li>
-              <li>Structural Analysis</li>
+              <li>Mechanical Engineering</li>
+              <li>Rapid Prototyping</li>
+              <li>IoT Solutions</li>
+              <li>ERP Systems</li>
+              <li>Automation & Controls</li>
             </ul>
           </div>
 
@@ -71,18 +71,18 @@ const Footer = () => {
             <h4 className="text-white font-semibold">Get in Touch</h4>
             <div className="space-y-3">
               <a
-                href="mailto:info@axoraengineering.com"
+                href="mailto:info@fonovalabs.com"
                 className="flex items-center gap-2 text-white/60 hover:text-accent transition-colors duration-300 text-sm"
               >
                 <Mail className="w-4 h-4" />
-                info@axoraengineering.com
+                info@fonovalabs.com
               </a>
               <a
-                href="tel:+61400000000"
+                href="tel:+61385001234"
                 className="flex items-center gap-2 text-white/60 hover:text-accent transition-colors duration-300 text-sm"
               >
                 <Phone className="w-4 h-4" />
-                +61 400 000 000
+                +61 3 8500 1234
               </a>
             </div>
             <div className="flex gap-3 pt-2">
@@ -102,7 +102,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">
-              © {currentYear} Axora Engineering. All rights reserved.
+              © {currentYear} Fonova Labs. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-white/40 hover:text-accent transition-colors duration-300">

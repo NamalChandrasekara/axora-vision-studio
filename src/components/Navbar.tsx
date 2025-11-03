@@ -43,7 +43,7 @@ const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-2xl font-bold text-white hover:text-accent transition-colors duration-300"
           >
-            Axora <span className="text-accent">Engineering</span>
+            Fonova <span className="text-accent">Labs</span>
           </button>
 
           {/* Desktop Navigation */}

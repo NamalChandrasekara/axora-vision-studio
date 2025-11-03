@@ -20,20 +20,20 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white text-sm font-medium">
             <CheckCircle2 className="w-4 h-4 text-accent" />
-            <span>Australian Standards Certified</span>
+            <span>ISO Certified Engineering Solutions</span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Transform Your Vision Into
-            <span className="block text-gradient-accent mt-2">
-              Build-Ready Reality
+            Engineering Innovation From
+            <span className="block bg-gradient-tech bg-clip-text text-transparent mt-2">
+              Concept to Reality
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Expert drafting, 3D modeling, rendering, and structural analysis services for architects, builders, and developers across Australia.
+            Advanced mechanical engineering, rapid prototyping, IoT solutions, and ERP systems to power your next-generation products and operations.
           </p>
 
           {/* CTA Buttons */}
@@ -60,15 +60,15 @@ const Hero = () => {
           <div className="pt-8 flex flex-wrap justify-center gap-8 text-white/60 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-accent" />
-              <span>50% Cost Savings</span>
+              <span>Rapid Prototyping</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-accent" />
-              <span>Fast Turnaround</span>
+              <span>IoT Integration</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-accent" />
-              <span>Expert Team</span>
+              <span>End-to-End Solutions</span>
             </div>
           </div>
         </div>

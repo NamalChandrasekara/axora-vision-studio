@@ -63,6 +63,7 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-tech': 'var(--gradient-tech)',
         'gradient-subtle': 'var(--gradient-subtle)',
       },
       boxShadow: {
@@ -70,6 +71,7 @@ export default {
         'medium': 'var(--shadow-medium)',
         'large': 'var(--shadow-large)',
         'glow': 'var(--shadow-glow)',
+        'tech': 'var(--shadow-tech)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

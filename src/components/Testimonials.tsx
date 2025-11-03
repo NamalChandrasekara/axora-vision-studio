@@ -11,52 +11,52 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Sarah Mitchell",
-    role: "Principal Architect",
-    company: "Mitchell & Associates",
-    content: "Axora Engineering transformed our workflow completely. Their attention to detail and compliance with Australian standards gave us complete confidence in every deliverable. The 50% cost savings didn't hurt either!",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
-  },
-  {
-    name: "David Chen",
-    role: "Construction Manager",
-    company: "BuildPro Constructions",
-    content: "The turnaround time is exceptional. What used to take weeks now takes days, and the quality is consistently outstanding. Their structural analysis using ETABS saved us from potential issues on our last project.",
+    name: "David Kumar",
+    role: "CTO",
+    company: "TechFlow Manufacturing",
+    content: "Fonova Labs developed our IoT-enabled production monitoring system from scratch. Their mechanical engineering and software integration expertise is unmatched.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
   },
   {
-    name: "Emma Robertson",
-    role: "Development Director",
-    company: "Urban Developments Ltd",
-    content: "The 3D renderings and walkthroughs helped us secure investor buy-in faster than ever. The visual quality is photorealistic, and the team was incredibly responsive to our feedback throughout the process.",
+    name: "Lisa Zhang",
+    role: "Product Manager",
+    company: "InnovateMed Devices",
+    content: "The rapid prototyping service accelerated our medical device development by months. Their precision and quality control are exceptional.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Marcus Rodriguez",
+    role: "Operations Director",
+    company: "AutoParts Global",
+    content: "Their ERP implementation and automation solutions transformed our manufacturing efficiency. Professional team that delivers real results.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Sarah Williams",
+    role: "Founder & CEO",
+    company: "SmartHome Innovations",
+    content: "The IoT solutions from Fonova Labs brought our smart home products to market faster than we thought possible. Their technical expertise is outstanding.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
   },
   {
-    name: "Michael Thompson",
-    role: "Senior Engineer",
-    company: "Thompson Engineering Group",
-    content: "Working with Axora has been a game-changer. Their expertise with STAAD.Pro and comprehensive BOQ services streamlined our entire project planning phase. Highly professional and technically excellent.",
+    name: "James Chen",
+    role: "Engineering Manager",
+    company: "RoboTech Systems",
+    content: "From mechanical design to embedded systems, Fonova Labs handled our robotics project end-to-end. The quality and attention to detail exceeded our expectations.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
   },
   {
-    name: "Lisa Anderson",
-    role: "Project Manager",
-    company: "Anderson Property Group",
-    content: "The on-site engineering support in Melbourne was invaluable. Having experts who understand both international best practices and local Australian requirements made coordination seamless.",
+    name: "Emma Thompson",
+    role: "Product Director",
+    company: "GreenEnergy Solutions",
+    content: "Their automation systems improved our production efficiency by 40%. The team's expertise in both hardware and software integration is remarkable.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop"
-  },
-  {
-    name: "James Wilson",
-    role: "Design Principal",
-    company: "Wilson Architecture Studio",
-    content: "From initial CAD drafts to final Revit models, every deliverable exceeded expectations. The team's dedication to quality and their rigorous checking process gives us peace of mind on every project.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
   }
 ];
 
