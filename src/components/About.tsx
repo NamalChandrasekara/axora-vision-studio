@@ -90,32 +90,32 @@ const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Engineering Excellence,
-              <span className="text-gradient-accent block mt-2">
-                Delivered Precisely
+              Engineering Innovation,
+              <span className="bg-gradient-tech bg-clip-text text-transparent block mt-2">
+                From Concept to Reality
               </span>
             </h2>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              At Axora Engineering, we specialize in transforming ideas into precise, visual, and build-ready solutions. With expertise across drafting, 3D modeling, rendering, and structural analysis, we empower architects, builders, and developers to streamline projects, cut costs, and deliver outstanding results.
+              At Fonova Labs, we transform innovative ideas into working prototypes and production-ready systems. With expertise in mechanical engineering, IoT solutions, ERP systems, and advanced manufacturing, we help businesses bring cutting-edge products to market faster and more efficiently.
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-6">
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">50%</div>
-                <div className="text-sm text-muted-foreground">Cost Savings</div>
+                <div className="text-4xl font-bold text-accent">200+</div>
+                <div className="text-sm text-muted-foreground">Projects Delivered</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">100%</div>
-                <div className="text-sm text-muted-foreground">Compliant</div>
+                <div className="text-4xl font-bold text-accent">ISO</div>
+                <div className="text-sm text-muted-foreground">Certified</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">Fast</div>
-                <div className="text-sm text-muted-foreground">Turnaround</div>
+                <div className="text-4xl font-bold text-accent">24/7</div>
+                <div className="text-sm text-muted-foreground">Support</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">Expert</div>
-                <div className="text-sm text-muted-foreground">Team</div>
+                <div className="text-4xl font-bold text-accent">Smart</div>
+                <div className="text-sm text-muted-foreground">IoT Solutions</div>
               </div>
             </div>
           </div>

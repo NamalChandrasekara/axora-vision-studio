@@ -61,13 +61,13 @@ const Contact = () => {
                   Get In Touch
                 </span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                  Let's Start Your
-                  <span className="text-gradient-accent block mt-2">
-                    Next Project
+                  Let's Build Something
+                  <span className="bg-gradient-tech bg-clip-text text-transparent block mt-2">
+                    Amazing Together
                   </span>
                 </h2>
                 <p className="text-lg text-white/70 leading-relaxed">
-                  Ready to transform your vision into reality? Contact us today for a free consultation and discover how we can help streamline your projects.
+                  Ready to turn your ideas into reality? Contact us for a consultation and discover how we can bring your innovative product to life.
                 </p>
               </div>
 
@@ -78,8 +78,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-white/60 text-sm mb-1">Email</div>
-                    <a href="mailto:info@axoraengineering.com" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
-                      info@axoraengineering.com
+                    <a href="mailto:info@fonovalabs.com" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
+                      info@fonovalabs.com
                     </a>
                   </div>
                 </div>
@@ -90,8 +90,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-white/60 text-sm mb-1">Phone</div>
-                    <a href="tel:+61400000000" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
-                      +61 400 000 000
+                    <a href="tel:+61385001234" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
+                      +61 3 8500 1234
                     </a>
                   </div>
                 </div>
@@ -103,7 +103,8 @@ const Contact = () => {
                   <div>
                     <div className="text-white/60 text-sm mb-1">Location</div>
                     <div className="text-white text-lg font-medium">
-                      Melbourne, Australia
+                      Innovation Hub, Melbourne<br />
+                      Victoria, Australia
                     </div>
                   </div>
                 </div>

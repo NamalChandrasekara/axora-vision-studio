@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Ruler, Box, Sparkles, Calculator, Building } from "lucide-react";
+import { Cog, Wrench, Cpu, Database, Workflow } from "lucide-react";
 
 interface Service {
   id: number;
@@ -12,38 +12,38 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "CAD Drafting",
-    description: "Precise technical drawings and blueprints using industry-standard CAD software. From concept sketches to detailed construction documents, we deliver accurate 2D and 3D drafting services.",
-    icon: Ruler,
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop"
+    title: "Mechanical Engineering",
+    description: "Complete mechanical design, CAD modeling, and engineering analysis for innovative product development. From concept to manufacturing-ready designs.",
+    icon: Cog,
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop"
   },
   {
     id: 2,
-    title: "3D Modeling",
-    description: "Comprehensive 3D modeling services using Revit and SketchUp. Create detailed building information models (BIM) that enhance collaboration and streamline the construction process.",
-    icon: Box,
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
+    title: "Rapid Prototyping",
+    description: "Fast-track your product development with 3D printing, CNC machining, and prototype fabrication services. From initial concept to functional prototype in days.",
+    icon: Wrench,
+    image: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&h=600&fit=crop"
   },
   {
     id: 3,
-    title: "Rendering & Walkthroughs",
-    description: "Photorealistic renderings and immersive walkthroughs that bring your designs to life. Perfect for client presentations, marketing materials, and design validation using Lumion, Enscape, and Twinmotion.",
-    icon: Sparkles,
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+    title: "IoT Solutions",
+    description: "Smart device integration, sensor networks, and connected systems for Industry 4.0 applications. Real-time monitoring and data-driven decision making.",
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop"
   },
   {
     id: 4,
-    title: "BOQ & Estimating",
-    description: "Accurate Bill of Quantities and cost estimation services. We provide detailed material takeoffs and cost analysis to help you budget and plan your projects effectively.",
-    icon: Calculator,
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
+    title: "ERP Systems",
+    description: "Custom ERP implementation and integration to streamline manufacturing and business operations. Optimize workflow and boost productivity.",
+    icon: Database,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
   },
   {
     id: 5,
-    title: "Structural Analysis",
-    description: "Advanced structural analysis and design using industry-leading software like STAAD.Pro, ETABS, Tekla, and SAP2000. Ensure your structures meet all safety requirements and building codes.",
-    icon: Building,
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop"
+    title: "Automation & Controls",
+    description: "Industrial automation, PLC programming, and process control systems for manufacturing efficiency. Reduce costs and increase output quality.",
+    icon: Workflow,
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop"
   }
 ];
 
@@ -66,10 +66,10 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-            Comprehensive Engineering Solutions
+            Advanced Engineering & Technology Solutions
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            From initial concept to final construction, we provide end-to-end engineering services tailored to your project needs.
+            From mechanical prototypes to smart IoT systems, we deliver cutting-edge engineering excellence.
           </p>
         </div>
 

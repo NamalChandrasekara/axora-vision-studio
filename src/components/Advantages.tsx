@@ -1,4 +1,4 @@
-import { DollarSign, Shield, Users, Clock, MapPin, Award } from "lucide-react";
+import { Zap, Shield, Users, Clock, Cpu, Award } from "lucide-react";
 
 interface Advantage {
   icon: React.ComponentType<{ className?: string }>;
@@ -9,40 +9,40 @@ interface Advantage {
 
 const advantages: Advantage[] = [
   {
-    icon: DollarSign,
-    title: "Cost Savings",
-    description: "Up to 50% lower cost compared to hiring locally — without compromising quality or precision.",
-    color: "from-green-400 to-emerald-600"
+    icon: Zap,
+    title: "Rapid Development",
+    description: "Fast prototyping and agile engineering processes to accelerate your time-to-market.",
+    color: "from-cyan-400 to-blue-600"
   },
   {
     icon: Shield,
-    title: "Australian Standards",
-    description: "All drawings and models are fully compliant with Australian codes and industry regulations.",
-    color: "from-blue-400 to-blue-600"
+    title: "ISO Certified",
+    description: "Quality management systems certified to international standards for reliable delivery.",
+    color: "from-blue-400 to-indigo-600"
   },
   {
     icon: Users,
-    title: "Expert Team",
-    description: "Experienced drafters, modelers, and engineers dedicated to delivering exceptional results.",
-    color: "from-purple-400 to-purple-600"
+    title: "Multidisciplinary Team",
+    description: "Mechanical engineers, software developers, and IoT specialists working together.",
+    color: "from-teal-400 to-cyan-600"
   },
   {
     icon: Clock,
-    title: "Fast Turnaround",
-    description: "Quick delivery timelines to keep your projects on track — with zero sacrifice to accuracy.",
-    color: "from-orange-400 to-red-600"
+    title: "24/7 Support",
+    description: "Round-the-clock technical support and monitoring for mission-critical systems.",
+    color: "from-emerald-400 to-teal-600"
   },
   {
-    icon: MapPin,
-    title: "On-Site Availability",
-    description: "Option for on-site engineers in Melbourne for seamless project coordination.",
-    color: "from-pink-400 to-rose-600"
+    icon: Cpu,
+    title: "Smart Technology",
+    description: "Cutting-edge IoT integration and automation for next-generation products.",
+    color: "from-blue-400 to-cyan-600"
   },
   {
     icon: Award,
-    title: "Uncompromised Quality",
-    description: "Every project undergoes rigorous quality checks to ensure accuracy and excellence.",
-    color: "from-yellow-400 to-amber-600"
+    title: "Proven Track Record",
+    description: "Successfully delivered 200+ projects across manufacturing, automation, and IoT sectors.",
+    color: "from-cyan-400 to-teal-600"
   }
 ];
 
@@ -55,10 +55,10 @@ const Advantages = () => {
             Why Choose Us
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            The Axora Engineering Advantage
+            The Fonova Labs Advantage
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Why leading architects, builders, and developers trust us with their most critical projects.
+            Trusted by innovative companies and startups to bring breakthrough products to life.
           </p>
         </div>
 
