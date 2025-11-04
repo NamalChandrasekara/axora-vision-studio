@@ -17,15 +17,15 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    /* Deep Navy - Professional Engineering */
-    --primary: 220 40% 15%;
+    /* Dark Blue - Professional Engineering */
+    --primary: 220 60% 12%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 35% 25%;
+    --primary-light: 220 50% 18%;
 
-    /* Warm Orange - Energy & Innovation */
-    --accent: 25 95% 53%;
+    /* Vibrant Green - Innovation & Growth */
+    --accent: 142 76% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 25 95% 60%;
+    --accent-glow: 142 76% 55%;
 
     /* Neutral Grays */
     --secondary: 220 15% 95%;
@@ -44,14 +44,14 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(220 40% 15%), hsl(220 35% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(220 60% 12%), hsl(220 50% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 76% 55%));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
 
     --shadow-soft: 0 2px 8px hsl(220 20% 10% / 0.08);
     --shadow-medium: 0 4px 16px hsl(220 20% 10% / 0.12);
     --shadow-large: 0 8px 32px hsl(220 20% 10% / 0.16);
-    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
+    --shadow-glow: 0 0 40px hsl(142 76% 45% / 0.3);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -68,28 +68,28 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
+    --background: 0 0% 5%;
     --foreground: 210 20% 98%;
 
-    --card: 220 23% 12%;
+    --card: 220 23% 8%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 220 23% 12%;
+    --popover: 220 23% 8%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 220 40% 18%;
+    --primary: 220 60% 15%;
     --primary-foreground: 210 20% 98%;
-    --primary-light: 220 35% 22%;
+    --primary-light: 220 50% 20%;
 
-    --secondary: 200 30% 28%;
+    --secondary: 220 20% 18%;
     --secondary-foreground: 210 20% 98%;
 
-    --muted: 200 25% 30%;
-    --muted-foreground: 200 10% 60%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 180 65% 45%;
-    --accent-foreground: 210 20% 98%;
-    --accent-glow: 180 70% 50%;
+    --accent: 142 76% 50%;
+    --accent-foreground: 0 0% 5%;
+    --accent-glow: 142 76% 60%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
@@ -98,16 +98,16 @@ All colors MUST be HSL.
     --input: 200 20% 25%;
     --ring: 180 65% 45%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(220, 40%, 18%) 0%, hsl(200, 35%, 25%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(200, 70%, 45%) 0%, hsl(180, 65%, 45%) 100%);
-    --gradient-tech: linear-gradient(135deg, hsl(210, 70%, 50%) 0%, hsl(180, 65%, 45%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(220, 25%, 8%) 0%, hsl(220, 23%, 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 5%) 0%, hsl(220, 60%, 15%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(142, 76%, 45%) 0%, hsl(142, 76%, 55%) 100%);
+    --gradient-tech: linear-gradient(135deg, hsl(220, 60%, 15%) 0%, hsl(142, 76%, 45%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 5%) 0%, hsl(220, 23%, 8%) 100%);
 
-    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 30px hsla(180, 65%, 45%, 0.5);
-    --shadow-tech: 0 0 40px hsla(180, 70%, 50%, 0.4);
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px hsla(142, 76%, 45%, 0.5);
+    --shadow-tech: 0 0 40px hsla(142, 76%, 50%, 0.4);
 
     --sidebar-background: 220 23% 12%;
     --sidebar-foreground: 210 20% 98%;
