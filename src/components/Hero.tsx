@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import logoImage from '../assets/log-removebg-preview.png';
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
+  function scrollToSection(id: string) {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
-  };
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-primary">
@@ -24,12 +25,25 @@ const Hero = () => {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          {/* <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
             Engineering Innovation From
-            <span className="block bg-gradient-tech bg-clip-text text-transparent mt-2">
+            <span className="block bg-gradient-tech bg-clip-text text-white mt-2">
               Concept to Reality
             </span>
-          </h1>
+          </h1> */}
+  <div className="flex flex-col items-center md:items-center gap-4">
+  <img 
+    src={logoImage} 
+    alt="Fonova Labs Logo" 
+    //className="w-96 h-auto md:w-64 lg:w-80"
+     className="w-96 h-auto md:w-[32rem] lg:w-[40rem]"
+  />
+  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-center">
+    <span className="block bg-gradient-tech bg-clip-text text-white mt-2">
+      Concept to Reality
+    </span>
+  </h1>
+</div>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
