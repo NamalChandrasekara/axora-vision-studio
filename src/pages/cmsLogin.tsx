@@ -640,6 +640,116 @@ const CMSDashboard = ({ onLogout }: { onLogout: () => void }) => {
             )}
           </>
         )}
+
+        {activeTab === 'projects' && (
+  <>
+    <h2 className="text-xl font-bold mb-4">All Projects ({projects.length})</h2>
+    {isLoading ? (
+      <div className="text-center py-12">
+        <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto" />
+      </div>
+    ) : projects.length === 0 ? (
+      <Card>
+        <CardContent className="text-center py-12 text-gray-500">
+          No projects yet
+        </CardContent>
+      </Card>
+    ) : (
+      <div className="grid gap-4">
+        {projects.map((p) => (
+          <Card key={p._id} className="hover:shadow-lg transition-shadow">
+            <CardContent className="p-6">
+              <div className="flex justify-between items-start">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    {p.thumbnail && (
+                      <img 
+                        src={p.thumbnail} 
+                        alt={p.name} 
+                        className="w-16 h-16 rounded object-cover" 
+                      />
+                    )}
+                    <div>
+                      <h3 className="font-bold text-xl flex items-center gap-2">
+                        <Briefcase className="w-5 h-5" />
+                        {p.name}
+                      </h3>
+                      <p className="text-sm text-gray-600">Client: {p.client}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2 mb-3">
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Request:</p>
+                      <p className="text-gray-600">{p.request}</p>
+                    </div>
+                    
+                    {p.difficulties && (
+                      <div>
+                        <p className="text-sm font-semibold text-gray-700">Difficulties:</p>
+                        <p className="text-gray-600">{p.difficulties}</p>
+                      </div>
+                    )}
+                    
+                    {p.media.length > 0 && (
+                      <div>
+                        <p className="text-sm font-semibold text-gray-700">Media: {p.media.length} item(s)</p>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="flex items-center gap-3 text-xs text-gray-500">
+                    <span>{new Date(p.createdAt).toLocaleDateString()}</span>
+                    <span>•</span>
+                    {p.isPublished ? (
+                      <span className="flex items-center gap-1 text-green-600">
+                        <CheckCircle className="w-3 h-3" />Published
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1 text-gray-600">
+                        <XCircle className="w-3 h-3" />Draft
+                      </span>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="flex gap-2 ml-4">
+                  <Button
+                    onClick={() => {
+                      setProjectForm({
+                        name: p.name,
+                        client: p.client,
+                        request: p.request,
+                        difficulties: p.difficulties,
+                        thumbnail: p.thumbnail,
+                        media: p.media,
+                        isPublished: p.isPublished
+                      });
+                      setEditingId(p._id);
+                      setShowForm(true);
+                    }}
+                    size="sm"
+                    variant="outline"
+                  >
+                    <Edit className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    onClick={() => handleDeleteProject(p._id)}
+                    size="sm"
+                    variant="outline"
+                    className="text-red-600 hover:bg-red-50"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    )}
+  </>
+)}
       </div>
     </div>
   );
@@ -680,63 +790,3 @@ const CMSApp = () => {
 };
 
 export default CMSApp;
-// -bold text-lg">{t.name}</h3>
-//                               {t.position && <p className="text-sm text-gray-600">{t.position}{t.company && ` at ${t.company}`}</p>}
-//                             </div>
-//                           </div>
-//                           <div className="flex items-center gap-1 mb-2">
-//                             {[...Array(5)].map((_, i) => (
-//                               <Star key={i} className={`w-4 h-4 ${i < t.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
-//                             ))}
-//                           </div>
-//                           <p className="text-gray-700 mb-3">{t.content}</p>
-//                           <div className="flex items-center gap-3 text-xs text-gray-500">
-//                             <span>{new Date(t.createdAt).toLocaleDateString()}</span>
-//                             <span>•</span>
-//                             {t.isPublished ? (
-//                               <span className="flex items-center gap-1 text-green-600"><CheckCircle className="w-3 h-3" />Published</span>
-//                             ) : (
-//                               <span className="flex items-center gap-1 text-gray-600"><XCircle className="w-3 h-3" />Draft</span>
-//                             )}
-//                           </div>
-//                         </div>
-//                         <div className="flex gap-2 ml-4">
-//                           <Button onClick={() => {
-//                             setTestimonialForm({
-//                               name: t.name, position: t.position, company: t.company,
-//                               content: t.content, rating: t.rating, image: t.image, isPublished: t.isPublished
-//                             });
-//                             setEditingId(t.id);
-//                             setShowForm(true);
-//                           }} size="sm" variant="outline"><Edit className="w-4 h-4" /></Button>
-//                           <Button onClick={() => handleDeleteTestimonial(t.id)} size="sm" variant="outline" className="text-red-600 hover:bg-red-50">
-//                             <Trash2 className="w-4 h-4" />
-//                           </Button>
-//                         </div>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 ))}
-//               </div>
-//             )}
-//           </>
-//         )}
-
-//         {activeTab === 'projects' && (
-//           <>
-//             <h2 className="text-xl font-bold mb-4">All Projects ({projects.length})</h2>
-//             {isLoading ? (
-//               <div className="text-center py-12"><div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto" /></div>
-//             ) : projects.length === 0 ? (
-//               <Card><CardContent className="text-center py-12 text-gray-500">No projects yet</CardContent></Card>
-//             ) : (
-//               <div className="grid gap-4">
-//                 {projects.map((p) => (
-//                   <Card key={p._id} className="hover:shadow-lg transition-shadow">
-//                     <CardContent className="p-6">
-//                       <div className="flex justify-between items-start">
-//                         <div className="flex-1">
-//                           <div className="flex items-center gap-3 mb-3">
-//                             {p.thumbnail && <img src={p.thumbnail} alt={p.name} className="w-16 h-16 rounded object-cover" />}
-//                             <div>
-//                               <h3 className="font
