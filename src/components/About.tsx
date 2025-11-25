@@ -102,12 +102,12 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6 pt-6">
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">200+</div>
+                <div className="text-4xl font-bold text-accent">2</div>
                 <div className="text-sm text-muted-foreground">Projects Delivered</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-accent">ISO</div>
-                <div className="text-sm text-muted-foreground">Certified</div>
+                <div className="text-4xl font-bold text-accent">Bsc Engineers</div>
+                <div className="text-sm text-muted-foreground">Team</div>
               </div>
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-accent">24/7</div>

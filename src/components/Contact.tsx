@@ -91,12 +91,12 @@ const Contact = () => {
                   <div>
                     <div className="text-white/60 text-sm mb-1">Phone</div>
                     <a href="tel:+61385001234" className="text-white hover:text-accent transition-colors duration-300 text-lg font-medium">
-                      +94 70 3977453
+                      +94 767510070
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 backdrop-blur-lg border border-accent/20">
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
@@ -107,7 +107,7 @@ const Contact = () => {
                       Sri Lanka
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
