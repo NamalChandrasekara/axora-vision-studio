@@ -1,66 +1,89 @@
 import { Star, Quote } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface Testimonial {
+  _id: string;
   name: string;
-  role: string;
+  position: string;
   company: string;
   content: string;
   rating: number;
   image: string;
+  isPublished: boolean;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    name: "David Kumar",
-    role: "CTO",
-    company: "TechFlow Manufacturing",
-    content: "Fonova Labs developed our IoT-enabled production monitoring system from scratch. Their mechanical engineering and software integration expertise is unmatched.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Lisa Zhang",
-    role: "Product Manager",
-    company: "InnovateMed Devices",
-    content: "The rapid prototyping service accelerated our medical device development by months. Their precision and quality control are exceptional.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Marcus Rodriguez",
-    role: "Operations Director",
-    company: "AutoParts Global",
-    content: "Their ERP implementation and automation solutions transformed our manufacturing efficiency. Professional team that delivers real results.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Sarah Williams",
-    role: "Founder & CEO",
-    company: "SmartHome Innovations",
-    content: "The IoT solutions from Fonova Labs brought our smart home products to market faster than we thought possible. Their technical expertise is outstanding.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
-  },
-  {
-    name: "James Chen",
-    role: "Engineering Manager",
-    company: "RoboTech Systems",
-    content: "From mechanical design to embedded systems, Fonova Labs handled our robotics project end-to-end. The quality and attention to detail exceeded our expectations.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Emma Thompson",
-    role: "Product Director",
-    company: "GreenEnergy Solutions",
-    content: "Their automation systems improved our production efficiency by 40%. The team's expertise in both hardware and software integration is remarkable.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop"
-  }
-];
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`${API_BASE_URL}/api/testimonials/published`);
+        
+        if (!response.ok) {
+          throw new Error("Failed to fetch testimonials");
+        }
+
+        const result = await response.json();
+        
+        if (result.success && result.data) {
+          setTestimonials(result.data);
+        } else {
+          throw new Error("Invalid response format");
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An error occurred");
+        console.error("Error fetching testimonials:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="section-padding bg-gradient-subtle overflow-hidden">
+        <div className="container-custom">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-accent border-t-transparent"></div>
+            <p className="mt-4 text-muted-foreground">Loading testimonials...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="section-padding bg-gradient-subtle overflow-hidden">
+        <div className="container-custom">
+          <div className="text-center text-red-500">
+            <p>Error loading testimonials: {error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (testimonials.length === 0) {
+    return (
+      <section className="section-padding bg-gradient-subtle overflow-hidden">
+        <div className="container-custom">
+          <div className="text-center text-muted-foreground">
+            <p>No testimonials available at the moment.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="section-padding bg-gradient-subtle overflow-hidden">
       <div className="container-custom">
@@ -77,9 +100,9 @@ const Testimonials = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
-              key={index}
+              key={testimonial._id}
               className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 hover-lift border border-border group"
             >
               {/* Quote icon */}
@@ -106,15 +129,20 @@ const Testimonials = () => {
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://via.placeholder.com/400x400/10b981/ffffff?text=" + testimonial.name.charAt(0);
+                    }}
                   />
                 </div>
                 <div>
                   <div className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
                     {testimonial.name}
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </div>
+                  {testimonial.position && (
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.position}
+                    </div>
+                  )}
                   <div className="text-sm text-muted-foreground font-medium">
                     {testimonial.company}
                   </div>

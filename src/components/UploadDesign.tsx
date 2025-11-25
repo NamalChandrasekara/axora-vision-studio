@@ -5,6 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Upload, Info, CheckCircle } from "lucide-react";
 
+// Configuration - Change this for production
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const UploadDesign = () => {
   const [selectedService, setSelectedService] = useState<string>("");
   const [selectedMaterial, setSelectedMaterial] = useState<string>("");
@@ -45,7 +48,6 @@ const UploadDesign = () => {
     }
   ];
 
-  // Material configurations with types and colors
   const materialConfig: Record<string, { types: string[], colors: string[] }> = {
     aluminum: {
       types: ["Aluminum 5052", "Aluminum 6061", "Aluminum 7075"],
@@ -115,16 +117,6 @@ const UploadDesign = () => {
     setIsSubmitted(false);
   };
 
-  // Convert file to base64
-  const fileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = error => reject(error);
-    });
-  };
-
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
 
@@ -154,67 +146,63 @@ const UploadDesign = () => {
       return;
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please provide a valid email address.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Convert files to base64 for EmailJS
-      const filePromises = Array.from(files).map(async (file) => {
-        const base64 = await fileToBase64(file);
-        return {
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          content: base64
-        };
+      // Create FormData object
+      const formData = new FormData();
+      
+      // Append all form fields
+      formData.append('selectedService', selectedService);
+      formData.append('quantity', quantity.toString());
+      formData.append('designUnit', designUnit);
+      formData.append('selectedMaterial', selectedMaterial);
+      formData.append('selectedMaterialType', selectedMaterialType || '');
+      formData.append('color', color);
+      formData.append('specifications', specifications);
+      formData.append('email', email);
+      formData.append('mobile', mobile);
+      
+      // Append all files
+      Array.from(files).forEach(file => {
+        formData.append('files', file);
       });
 
-      const fileData = await Promise.all(filePromises);
-
-      // Prepare email template parameters
-      const templateParams = {
-        service_type: selectedService.replace('-', ' ').toUpperCase(),
-        quantity: quantity,
-        design_unit: designUnit,
-        material: selectedMaterial.replace('-', ' ').toUpperCase(),
-        material_type: selectedMaterialType || 'Not specified',
-        color: color,
-        specifications: specifications || 'None provided',
-        customer_email: email,
-        customer_mobile: mobile,
-        file_names: Array.from(files).map(f => f.name).join(', '),
-        file_count: files.length,
-        submission_date: new Date().toLocaleString(),
-        // Note: EmailJS has file size limits, so we'll just send file names
-        // For actual file transfer, you'd need to upload to cloud storage first
-      };
-
-      // EmailJS configuration
-      const serviceId = 'service_s7mgk9q'; // Replace with your EmailJS service ID
-      const templateId = 'template_plqzz5p'; // Replace with your EmailJS template ID
-      const publicKey = 'BU0F9Qxz5R3KCf-Fs'; // Replace with your EmailJS public key
-
-      // Send email using EmailJS
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      // Send request to backend
+      const response = await fetch(`${API_BASE_URL}/api/quote/submit-quote`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          service_id: serviceId,
-          template_id: templateId,
-          user_id: publicKey,
-          template_params: templateParams
-        })
+        body: formData
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setIsSubmitted(true);
+        console.log('Quote submitted successfully:', data.messageId);
       } else {
-        throw new Error('Failed to send email');
+        throw new Error(data.message || 'Failed to submit request');
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Failed to submit request. Please try again or contact us directly at info@fonovalabs.com");
+      
+      let errorMessage = 'Failed to submit request. ';
+      
+      if (error instanceof TypeError && error.message === 'Failed to fetch') {
+        errorMessage += 'Unable to connect to server. Please ensure the backend is running.';
+      } else if (error instanceof Error) {
+        errorMessage += error.message;
+      } else {
+        errorMessage += 'Please try again or contact us directly at info@fonovalabs.com';
+      }
+      
+      alert(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -239,7 +227,7 @@ const UploadDesign = () => {
               size="lg"
               className="bg-accent hover:bg-accent-glow text-accent-foreground px-12 py-6 text-lg font-semibold rounded-xl shadow-glow hover:scale-105 transition-all duration-300"
             >
-              Add Another Order
+              Submit Another Request
             </Button>
           </div>
         </div>
@@ -296,7 +284,7 @@ const UploadDesign = () => {
             </div>
           </div>
 
-          {/* File Upload Area - Only shown after service selection */}
+          {/* File Upload Area */}
           {selectedService && (
             <div className="mb-8">
               <Label className="text-lg font-semibold mb-4 block">
@@ -328,7 +316,9 @@ const UploadDesign = () => {
                     <p className="font-semibold mb-2">Selected files:</p>
                     <ul className="text-left max-w-md mx-auto">
                       {Array.from(files).map((f, idx) => (
-                        <li key={idx} className="truncate">• {f.name}</li>
+                        <li key={idx} className="truncate">
+                          • {f.name} ({(f.size / (1024 * 1024)).toFixed(2)} MB)
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -343,7 +333,7 @@ const UploadDesign = () => {
             </div>
           )}
 
-          {/* Form Fields - Only shown after file upload */}
+          {/* Form Fields */}
           {files && files.length > 0 && (
             <div className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
